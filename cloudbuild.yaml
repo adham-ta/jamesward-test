@@ -1,5 +1,11 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
+  entrypoint: '/bin/sh'
+  args:
+  - '-c'
+  - |
+     ls -al
+- name: 'gcr.io/cloud-builders/git'
   args: ['submodule', 'update', '--init', '--recursive']
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: '/bin/sh'
