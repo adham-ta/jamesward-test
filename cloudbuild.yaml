@@ -4,6 +4,6 @@ steps:
   args:
   - '-c'
   - |
-     wget -c https://github.com/gohugoio/hugo/releases/download/v0.69.2/hugo_0.69.2_Linux-64bit.tar.gz -O - | tar -zxv
+     curl https://github.com/gohugoio/hugo/releases/download/v0.69.2/hugo_0.69.2_Linux-64bit.tar.gz | tar -zxv
      ./hugo deploy
 
