@@ -1,12 +1,13 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
-  entrypoint: '/bin/sh'
+  entrypoint: 'bash'
   args:
   - '-c'
   - |
-     ls -al
-- name: 'gcr.io/cloud-builders/git'
-  args: ['submodule', 'update', '--init', '--recursive']
+    git init
+    git submodule init
+    git submodule update
+
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: '/bin/sh'
   args:
