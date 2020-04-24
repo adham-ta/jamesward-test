@@ -6,6 +6,7 @@ steps:
   - |
     git init
     git submodule update --init --recursive
+    find .
 
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: '/bin/sh'
