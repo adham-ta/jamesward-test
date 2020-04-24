@@ -4,10 +4,10 @@ steps:
   args:
   - '-c'
   - |
-     cd themes/ananke
-     git clone https://github.com/budparr/gohugo-theme-ananke.git
-     cd ../..
-
+     rm -rf themes
+     git init
+     git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+     
      curl -sL https://github.com/gohugoio/hugo/releases/download/v0.69.2/hugo_0.69.2_Linux-64bit.tar.gz | tar -zxv
      ./hugo
      ./hugo deploy -v
