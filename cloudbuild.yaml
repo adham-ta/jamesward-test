@@ -5,8 +5,7 @@ steps:
   - '-c'
   - |
     git init
-    git submodule init
-    git submodule update
+    git submodule update --init --recursive
 
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: '/bin/sh'
