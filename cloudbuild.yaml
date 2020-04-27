@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
+- name: 'gcr.io/jamesward/firebase'
   entrypoint: '/bin/sh'
   args:
   - '-c'
@@ -10,5 +10,5 @@ steps:
      
      curl -sL https://github.com/gohugoio/hugo/releases/download/v0.69.2/hugo_0.69.2_Linux-64bit.tar.gz | tar -zxv
      ./hugo
-     ./hugo deploy -v
-     gcloud compute url-maps invalidate-cdn-cache jamesward-test --path "/*"
+
+     firebase deploy --project=jamesward --only=hosting
